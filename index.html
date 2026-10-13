@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Даниил Смирнов — SMM-менеджер</title>
+<meta name="description" content="Тестовое задание для «Грум-мир»: от контента ради контента к системе роста продаж. Портфолио SMM-менеджера Даниила Смирнова.">
+<style>
+/* Шрифты: положите файлы в fonts/ и раскомментируйте блоки ниже,
+   затем впишите имена в переменные --font-head / --font-body */
+/*
+@font-face { font-family: "Head"; src: url("fonts/head.woff2") format("woff2"); font-weight: 700; font-display: swap; }
+@font-face { font-family: "Body"; src: url("fonts/body.woff2") format("woff2"); font-weight: 400; font-display: swap; }
+*/
+:root {
+  --font-head: "Head", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --font-body: "Body", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --bg: #f6f6f4;
+  --ink: #161616;
+  --muted: #6b6b68;
+  --line: #e2e2de;
+  --accent: #e8262b;
+  --gutter: 20px;
+  --max: 1100px;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.6;
+  -webkit-text-size-adjust: 100%;
+}
+.wrap { max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter); }
+
+/* защита: нельзя выделять и перетаскивать */
+.protect, .protect * {
+  -webkit-user-select: none; user-select: none;
+  -webkit-touch-callout: none;
+}
+img { -webkit-user-drag: none; user-drag: none; }
+
+/* hero */
+header.hero { padding: 72px 0 48px; }
+.eyebrow { color: var(--accent); font-size: 13px; letter-spacing: .14em; text-transform: uppercase; font-weight: 600; margin: 0 0 20px; }
+h1 { font-family: var(--font-head); font-size: clamp(30px, 6vw, 58px); line-height: 1.08; margin: 0 0 24px; letter-spacing: -.01em; max-width: 18ch; }
+.lead { color: var(--muted); max-width: 52ch; margin: 0 0 28px; }
+.who { display: flex; flex-wrap: wrap; gap: 8px 24px; font-size: 15px; color: var(--muted); border-top: 1px solid var(--line); padding-top: 18px; }
+.who b { color: var(--ink); font-weight: 600; }
+
+/* слайды */
+.deck { padding: 8px 0 32px; }
+.deck h2, .approach h2 { font-family: var(--font-head); font-size: clamp(24px, 4vw, 36px); margin: 0 0 8px; }
+.deck .sub { color: var(--muted); margin: 0 0 28px; }
+.slide {
+  position: relative;
+  margin: 0 0 20px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  overflow: hidden;
+  background: #fff;
+  aspect-ratio: 16 / 9;
+}
+.slide img { display: block; width: 100%; height: 100%; object-fit: cover; pointer-events: none; }
+.slide::after { /* водяной знак + перехват кликов */
+  content: "";
+  position: absolute; inset: 0;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='360' height='220'><text x='20' y='120' transform='rotate(-24 180 110)' font-family='Arial,sans-serif' font-size='17' fill='%23000' fill-opacity='0.10'>Даниил Смирнов · SMM</text></svg>");
+  background-size: 360px 220px;
+}
+.slide .num {
+  position: absolute; right: 12px; bottom: 10px; z-index: 2;
+  font-size: 12px; color: #fff; background: rgba(0,0,0,.55);
+  padding: 2px 8px; border-radius: 99px; letter-spacing: .04em;
+}
+
+/* блок о специалисте */
+.approach { padding: 56px 0 72px; border-top: 1px solid var(--line); margin-top: 24px; }
+.approach .tag { color: var(--accent); font-size: 13px; letter-spacing: .14em; text-transform: uppercase; font-weight: 600; margin: 0 0 12px; }
+.approach .intro { max-width: 60ch; color: var(--muted); margin: 0 0 32px; }
+.points { display: grid; gap: 16px; padding: 0; margin: 0; list-style: none; counter-reset: p; grid-template-columns: repeat(2, 1fr); }
+.points li {
+  counter-increment: p;
+  background: #fff; border: 1px solid var(--line); border-radius: 10px;
+  padding: 22px 22px 22px 64px; position: relative;
+}
+.points li::before {
+  content: counter(p);
+  position: absolute; left: 22px; top: 20px;
+  width: 28px; height: 28px; border-radius: 50%;
+  background: var(--accent); color: #fff; font-weight: 700; font-size: 14px;
+  display: grid; place-items: center;
+}
+.points li p { margin: 0; }
+
+/* блок 2: процесс */
+.process { padding: 56px 0 64px; border-top: 1px solid var(--line); }
+.process .tag, .offer .tag { color: var(--accent); font-size: 13px; letter-spacing: .14em; text-transform: uppercase; font-weight: 600; margin: 0 0 12px; }
+.process h2, .offer h2 { font-family: var(--font-head); font-size: clamp(24px, 4vw, 36px); margin: 0 0 8px; }
+.process .intro { max-width: 60ch; color: var(--muted); margin: 0 0 8px; }
+.process .subhead { font-weight: 600; margin: 0 0 28px; }
+.steps { list-style: none; margin: 0 0 28px; padding: 0; counter-reset: s; display: grid; gap: 12px; }
+.steps li {
+  counter-increment: s; position: relative;
+  background: #fff; border: 1px solid var(--line); border-radius: 10px;
+  padding: 18px 22px 18px 72px;
+}
+.steps li::before {
+  content: counter(s);
+  position: absolute; left: 22px; top: 50%; transform: translateY(-50%);
+  width: 32px; height: 32px; border-radius: 50%;
+  border: 2px solid var(--accent); color: var(--accent); font-weight: 700;
+  display: grid; place-items: center;
+}
+.steps li strong { color: var(--ink); }
+.key { border-left: 3px solid var(--accent); padding: 4px 0 4px 16px; font-weight: 600; max-width: 60ch; margin: 0; }
+
+/* блок 3: что привнесу + контакты */
+.offer { padding: 56px 0 72px; border-top: 1px solid var(--line); }
+.offer h3 { font-size: 18px; margin: 24px 0 14px; }
+.checks { list-style: none; margin: 0 0 28px; padding: 0; display: grid; gap: 10px; max-width: 70ch; }
+.checks li { position: relative; padding-left: 28px; }
+.checks li::before { content: ""; position: absolute; left: 0; top: .55em; width: 14px; height: 2px; background: var(--accent); }
+.sign { margin: 40px 0 20px; padding-top: 24px; border-top: 1px solid var(--line); }
+.sign b { display: block; font-size: 20px; font-family: var(--font-head); }
+.sign span { color: var(--muted); }
+.contacts { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+.btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 12px 20px; border-radius: 99px; text-decoration: none;
+  font-weight: 600; font-size: 16px; border: 1px solid var(--ink); color: var(--ink); background: transparent;
+  transition: transform .12s ease, background .12s ease, color .12s ease;
+}
+.btn:hover { transform: translateY(-1px); }
+.btn.wa { background: #25d366; border-color: #25d366; color: #fff; }
+.btn.tg { background: #229ed9; border-color: #229ed9; color: #fff; }
+.btn.mail:hover { background: var(--ink); color: #fff; }
+.btn:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+.phone { color: var(--muted); font-size: 15px; margin: 14px 0 0; }
+.phone a { color: var(--ink); }
+
+footer { border-top: 1px solid var(--line); padding: 24px 0 40px; color: var(--muted); font-size: 14px; }
+
+@media (max-width: 720px) {
+  :root { --gutter: 16px; }
+  header.hero { padding: 40px 0 28px; }
+  .points { grid-template-columns: 1fr; }
+  .slide { border-radius: 6px; margin-bottom: 14px; }
+}
+
+/* печать отключена */
+@media print {
+  body > * { display: none !important; }
+  body::before { content: "Печать страницы отключена."; display: block; padding: 40px; font-size: 20px; }
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="eyebrow">Тестовое задание · SMM-менеджер</p>
+    <h1>От контента ради контента к системе роста продаж</h1>
+    <p class="lead">Разбор соцсетей интернет-магазина «Грум-мир»: сценарии, образ бренда и качество ИИ-контента — с конкретными идеями рилс.</p>
+    <div class="who"><span><b>Смирнов Даниил Германович</b></span><span>Позиция: SMM-менеджер</span></div>
+  </div>
+</header>
+
+<main>
+  <section class="deck" id="deck" aria-labelledby="deck-title">
+    <div class="wrap protect">
+      <h2 id="deck-title">Презентация</h2>
+      <p class="sub">23 слайда — листайте вниз.</p>
+      <div id="slides"></div>
+    </div>
+  </section>
+
+  <section class="approach" id="approach" aria-labelledby="approach-title">
+    <div class="wrap protect">
+      <p class="tag">Обо мне</p>
+      <h2 id="approach-title">Мой подход — контент как система</h2>
+      <p class="intro">Я рассматриваю контент не как набор публикаций, а как систему взаимодействия с аудиторией. Понимаю связь между контентом, аудиторией и бизнес-задачами.</p>
+      <ol class="points">
+        <li><p>Анализирую, что мешает контенту привлекать внимание и удерживать зрителя.</p></li>
+        <li><p>Превращаю профессиональную экспертизу в понятные ситуации, истории и сценарии.</p></li>
+        <li><p>Связываю развлекательный и экспертный контент с ассортиментом и задачами бизнеса.</p></li>
+        <li><p>Предлагаю форматы, которые можно развивать в регулярные рубрики, а не придумывать с нуля каждый раз.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="process" id="process" aria-labelledby="process-title">
+    <div class="wrap protect">
+      <p class="tag">Процесс</p>
+      <h2 id="process-title">Как я превращаю идеи в работу</h2>
+      <p class="intro">Путь от анализа до оценки результата.</p>
+      <p class="subhead">От гипотезы до анализа результата</p>
+      <ol class="steps">
+        <li><strong>Анализ.</strong> Изучаю контент, аудиторию, позиционирование и ассортимент.</li>
+        <li><strong>Гипотеза.</strong> Определяю, какую проблему аудитории должен решать новый формат.</li>
+        <li><strong>Разработка.</strong> Подготавливаю концепцию, сценарий, хук, визуальные референсы и CTA.</li>
+        <li><strong>Реализация.</strong> Адаптирую идею под площадку и участвую в подготовке публикации в рамках своей зоны ответственности.</li>
+        <li><strong>Оценка.</strong> Смотрю на удержание, досмотры, сохранения, переходы и целевые действия. На основе данных корректирую следующие публикации.</li>
+      </ol>
+      <p class="key">Моя задача — не просто выпустить контент, а понять, что сработало и почему.</p>
+    </div>
+  </section>
+
+  <section class="offer" id="offer" aria-labelledby="offer-title">
+    <div class="wrap">
+      <div class="protect">
+        <p class="tag">Для «Грум-мир»</p>
+        <h2 id="offer-title">Что я могу привнести в «Грум-мир»</h2>
+        <h3>Что я готов привнести в команду</h3>
+        <ul class="checks">
+          <li>Системный подход к разработке сценариев коротких видео.</li>
+          <li>Новые регулярные рубрики для грумеров и владельцев салонов.</li>
+          <li>Более последовательный визуальный образ бренда на разных площадках.</li>
+          <li>Практическое использование ИИ для подготовки визуалов и ускорения производства контента.</li>
+          <li>Анализ результатов публикаций и развитие форматов на основе данных.</li>
+        </ul>
+        <p class="key">Мой фокус — сделать контент полезнее для аудитории, узнаваемее для бренда и ближе к задачам бизнеса.</p>
+      </div>
+
+      <div class="sign">
+        <b>Смирнов Даниил</b>
+        <span>Кандидат на позицию SMM-менеджера</span>
+      </div>
+
+      <div class="contacts" id="contacts">
+        <a class="btn wa" href="https://wa.me/79610537674" target="_blank" rel="noopener">WhatsApp</a>
+        <a class="btn tg" href="https://t.me/+79610537674" target="_blank" rel="noopener">Telegram</a>
+        <a class="btn mail" href="mailto:smirno.daniil.06@mail.ru">smirno.daniil.06@mail.ru</a>
+      </div>
+      <p class="phone">Телефон: <a href="tel:+79610537674">+7 961 053-76-74</a></p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">© 2026 Даниил Смирнов</div>
+</footer>
+
+<script>
+(function () {
+  var TOTAL = 23;
+  var ALT = {
+    1: "Титульный слайд: От контента ради контента к системе роста продаж",
+    2: "Раздел 1: Усиление соцсетей", 3: "1.1 Структура сценариев: что не так",
+    4: "1.1 Главная проблема сценариев", 5: "1.1 Как переписать ролик, часть 1",
+    6: "1.1 Как переписать ролик, часть 2", 7: "1.1 Вывод", 8: "Новая логика сценария",
+    9: "1.2 Образ бренда: что не так", 10: "1.2 Образ бренда: как исправить",
+    11: "1.3 Качество ИИ-контента: что не так", 12: "1.3 Старый и обновлённый дизайн постов",
+    13: "Раздел 2: Сценарии рилс", 14: "2. Предисловие к сценариям",
+    15: "2.1 Груминг или магия?", 16: "2.2 Сделайте как у соседского шпица",
+    17: "2.3 Можно как в прошлый раз?", 18: "2.4 Рубрика «Переводчик с клиентского на грумерский»",
+    19: "2.5 Продуктовая рубрика «Почему один дороже?»", 20: "3. Три главных идеи",
+    21: "3.1 Структура сценариев", 22: "3.2 Единство образа", 23: "3.3 Работа с генерациями"
+  };
+  var box = document.getElementById("slides");
+  for (var i = 1; i <= TOTAL; i++) {
+    var n = (i < 10 ? "0" : "") + i;
+    var fig = document.createElement("div");
+    fig.className = "slide";
+    fig.innerHTML = '<img src="slides/s-' + n + '.webp" width="1600" height="900" alt="' + ALT[i] + '" draggable="false"' + (i > 2 ? ' loading="lazy"' : '') + '>' +
+                    '<span class="num">' + i + ' / ' + TOTAL + '</span>';
+    box.appendChild(fig);
+  }
+
+  // Защита от обычного копирования (полностью запретить в вебе нельзя)
+  function inProtected(t) { return t && t.closest && t.closest(".protect"); }
+  document.addEventListener("contextmenu", function (e) { if (inProtected(e.target)) e.preventDefault(); });
+  document.addEventListener("dragstart", function (e) { if (inProtected(e.target) || e.target.tagName === "IMG") e.preventDefault(); });
+  // контакты (вне .protect) остаются доступными для выделения и копирования
+  document.addEventListener("copy", function (e) { if (inProtected(e.target)) e.preventDefault(); });
+  document.addEventListener("cut", function (e) { if (inProtected(e.target)) e.preventDefault(); });
+  document.addEventListener("selectstart", function (e) { if (inProtected(e.target)) e.preventDefault(); });
+  document.addEventListener("keydown", function (e) {
+    var k = (e.key || "").toLowerCase();
+    var sel = String(window.getSelection() || "");
+    if ((e.ctrlKey || e.metaKey) && ["s", "p", "u", "a"].indexOf(k) !== -1) e.preventDefault();
+    if ((e.ctrlKey || e.metaKey) && (k === "c" || k === "x") && !sel) e.preventDefault();
+    if (k === "printscreen") { try { navigator.clipboard.writeText(""); } catch (_) {} }
+  });
+})();
+</script>
+</body>
+</html>
